@@ -1,0 +1,11 @@
+[Fotoideen for Windows Phone 7]
+
+What do I need to build?
+
+You may need an utility project that you can get from altima. Also you may need the EAZFuscator version 3.2 (Release version from Sept. 2011), because the current BEta version has an issue in reflecting the xaml code.
+
+I found a bug, what should I do?
+
+You can add them to the issue page here in github or try to fix it by forking the project and create a pull request ;).
+
+
