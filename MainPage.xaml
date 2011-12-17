@@ -1,0 +1,127 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Fotoideen.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:Primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit" mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"
+    Loaded="PhoneApplicationPage_Loaded"
+    toolkit:TiltEffect.IsTiltEnabled="true">
+
+    <phone:PhoneApplicationPage.Resources>
+        <ExponentialEase x:Key="Ease" EasingMode="EaseIn"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource ForegroundColor}">
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Image Source="/Images/Logo99.png" Margin="20,0" />
+                <TextBlock Text="{Binding Path=Stringresources.appName,Source={StaticResource stringResources}}" 
+                           Foreground="White" VerticalAlignment="Center" FontSize="68" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0">
+            <Controls:Panorama Name="Content" Foreground="{StaticResource ForegroundColor}">
+                <Controls:PanoramaItem Name="mainPan">
+                    <Grid>
+                        <ListBox Name="lbIdeas" SelectionChanged="lbIdeas_SelectionChanged" ItemsSource="{Binding Items}">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Visibility="{Binding Items, Converter={StaticResource listToVisibility}}">
+                                        <TextBlock Text="{Binding Name}" FontSize="40" FontWeight="Bold" 
+                                                   Foreground="{StaticResource ForegroundColor}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <StackPanel Visibility="{Binding Path=Items,Converter={StaticResource invertListToVisibility}}" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Path=Stringresources.infoNoItemsLoaded,Source={StaticResource stringResources}}" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="30,0"/>
+                            <Button Content="{Binding Path=Stringresources.btn_load,Source={StaticResource stringResources}}" 
+                                    Name="btnUpdate" Click="btnUpdate_Click" BorderBrush="{StaticResource ForegroundColor}"
+                                    Foreground="{StaticResource ForegroundColor}" Style="{StaticResource fiButtonStyle}"/>
+                        </StackPanel>
+
+                    </Grid>
+                </Controls:PanoramaItem>
+
+                <Controls:PanoramaItem Header="{Binding Path=Name}" Name="panWords">
+                    <ListBox Name="lbWords" SelectionChanged="lbWords_SelectionChanged"  ItemsSource="{Binding RandomItems}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Name}" FontSize="24" Foreground="{StaticResource ForegroundColor}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Controls:PanoramaItem>
+
+                <Controls:PanoramaItem Header="{Binding Path=Stringresources.settingsTitle,Source={StaticResource stringResources}}" Name="panSettings">
+                    <StackPanel Margin="0,20">
+                        <Button Content="{Binding Path=Stringresources.linkSheetButton,Source={StaticResource stringResources}}" Name="btnSheet" Click="btnSheet_Click" BorderBrush="{StaticResource ForegroundColor}" Foreground="{StaticResource ForegroundColor}" Style="{StaticResource fiButtonStyle}"/>
+                        <Button Content="{Binding Path=Stringresources.update_ideas,Source={StaticResource stringResources}}" Click="btnUpdate_Click" Foreground="{StaticResource ForegroundColor}" BorderBrush="{StaticResource ForegroundColor}" Style="{StaticResource fiButtonStyle}"/>
+                        <Button Content="{Binding Path=Stringresources.btn_reset,Source={StaticResource stringResources}}" Click="btnReset_Click" Foreground="{StaticResource ForegroundColor}" BorderBrush="{StaticResource ForegroundColor}" Style="{StaticResource fiButtonStyle}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Stringresources.lblRandom,Source={StaticResource stringResources}}" 
+                                   Foreground="{StaticResource ForegroundColor}" FontWeight="Bold" Grid.Column="0" VerticalAlignment="Center"/>
+                            <toolkit:ListPicker Name="dpRandom" BorderBrush="{StaticResource ForegroundColor}" BorderThickness="3" Foreground="{StaticResource ForegroundColor}" 
+                                            Margin="10,0,10,0" Grid.Column="1" Style="{StaticResource fiListPicker}" SelectionMode="Single">
+                                <toolkit:ListPickerItem Content="3" Tag="3" />
+                                <toolkit:ListPickerItem Content="5" Tag="5" />
+                                <toolkit:ListPickerItem Content="10" Tag="10" />
+                                <toolkit:ListPickerItem Content="15" Tag="15" />
+                                <toolkit:ListPickerItem Content="20" Tag="20" />
+                            </toolkit:ListPicker>
+                        </Grid>
+
+
+
+                    </StackPanel>
+                </Controls:PanoramaItem>
+                <Controls:PanoramaItem Header="{Binding Path=Stringresources.infoTitle,Source={StaticResource stringResources}}">
+                    <ScrollViewer Foreground="{StaticResource ForegroundColor}">
+                        <StackPanel Margin="10">
+                            <TextBlock Text="{Binding Path=Stringresources.readmeAboutTitle,Source={StaticResource stringResources}}" FontWeight="Bold" Margin="0,5" FontSize="26"/>
+                            <TextBlock Text="{Binding Path=Stringresources.readmeAbout,Source={StaticResource stringResources}}" TextWrapping="Wrap" FontSize="24"/>
+                            <TextBlock Text="{Binding Path=Stringresources.readmeHowItWorksTitle,Source={StaticResource stringResources}}" FontWeight="Bold" Margin="0,5" FontSize="26"/>
+                            <TextBlock Text="{Binding Path=Stringresources.readmeHowItWorks,Source={StaticResource stringResources}}"  TextWrapping="Wrap" FontSize="24"/>
+                            <TextBlock Text="{Binding Path=Stringresources.readmeLicenceTitle,Source={StaticResource stringResources}}" FontWeight="Bold" Margin="0,5" FontSize="26"/>
+                            <TextBlock Text="{Binding Path=Stringresources.readmeLicence,Source={StaticResource stringResources}}" TextWrapping="Wrap" FontSize="24"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Controls:PanoramaItem>
+            </Controls:Panorama>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

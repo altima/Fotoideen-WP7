@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="appName" xml:space="preserve">
+    <value>Fotoideen</value>
+  </data>
+  <data name="btn_load" xml:space="preserve">
+    <value>Fotoideen herunterladen</value>
+  </data>
+  <data name="btn_reset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="hint" xml:space="preserve">
+    <value>Hinweis</value>
+  </data>
+  <data name="infoNoItemsLoaded" xml:space="preserve">
+    <value>Lade dir jetzt die verfügbaren Fotoideen</value>
+  </data>
+  <data name="infoTitle" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="lblRandom" xml:space="preserve">
+    <value>Anzahl von
+Wörtern</value>
+  </data>
+  <data name="linkOriginatorApp" xml:space="preserve">
+    <value>http://www.photowalkideas.com/about-photo-walk-ideas/</value>
+  </data>
+  <data name="linkSheet" xml:space="preserve">
+    <value>https://docs.google.com/spreadsheet/ccc?key=0AqSNciwmshHBdDU3d1JOeDV4RXh3TXdjMTNIUDczalE&amp;hl=de#gid=0</value>
+  </data>
+  <data name="linkSheetButton" xml:space="preserve">
+    <value>eigene Fotoideen hinzufügen</value>
+  </data>
+  <data name="message_Exception" xml:space="preserve">
+    <value>Es ist ein Fehler aufgetretten, bitte prüfen Sie ihre Internetverbindung!</value>
+  </data>
+  <data name="message_WebExeption" xml:space="preserve">
+    <value>Es ist ein Kommunikationsfehler aufgetretten, bitte versuchen Sie es noch einmal!</value>
+  </data>
+  <data name="readmeAbout" xml:space="preserve">
+    <value>Fotoideen ist ein Begleiter für den Sonntagsausflug. Es soll dir helfen deine fotografischen Fähigkeiten zu verbessern.
+
+Fotoideen basiert auf der Idee des "Photo Walk Ideas" App für das iPhone (http://www.photowalkideas.com/about-photo-walk-ideas/). Leider ist dieses nur auf englisch erhältlich. Ich wollte eine einfache Anwendung schaffen, welche jeder Fotograf selbst erweitern und verbessern kann.
+
+Alle Stichworte werden direkt aus einer Excel-Tabelle ausgelesen. Diese liegt bei Google Texte &amp; Tabellen und ist für jedermann änderbar. Wenn dir die App gefällt, bitte ich nicht um eine Spende ;o) sondern darum die Tabelle zu ergänzen/zu verbessern. (Link zur Tabelle bei den Einstellungen)
+
+Idee/Bilder: 
+visualdrugs.net
+
+weitere Plattformen: 
+http://sunbox.github.com/Fotoideen/
+
+Windows Phone 7 Programmierung: 
+wp7dev.de (mail@wp7dev.de)
+
+Projekt:
+https://github.com/SunboX/Fotoideen
+
+
+</value>
+  </data>
+  <data name="readmeAboutTitle" xml:space="preserve">
+    <value>Über Fotoideen</value>
+  </data>
+  <data name="readmeHowItWorks" xml:space="preserve">
+    <value>Fotoideen hilft dir mit einer Liste von Stichwörtern bei einem fotografischen Kreativitätsloch oder um einfach einen anderen Blick auf gewohnte Motive zu finden. Dabei kannst du aus einer Liste von Themen wählen (Natur, Menschen, Urban, Sport, ...), und die Anzahl der Stichworte festlegen (3, 5, 10 ...). Fotoideen wird daraufhin eine Stichwortliste generieren. Deine Aufgabe ist es nun diese Stichworte fotografisch umzusetzen. Dabei kannst du versuchen alle Stichworte mit einem Bild festzuhalten (schwierig) oder zu jedem Stichwort ein einzelnes Bild zu gestalten.</value>
+  </data>
+  <data name="readmeHowItWorksTitle" xml:space="preserve">
+    <value>Wie funktioniert das?</value>
+  </data>
+  <data name="readmeLicence" xml:space="preserve">
+    <value>Fotoideen unterliegt der CC BY-NC-SA 3.0 Lizenz (Namensnennung-Nicht-kommerziell-Weitergabe unter gleichen Bedingungen 3.0) Weitere Informationen zur Lizenz gibt es hier: http://creativecommons.org/licenses/by-nc-sa/3.0/de/</value>
+  </data>
+  <data name="readmeLicenceTitle" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="settingsTitle" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="update_ideas" xml:space="preserve">
+    <value>Fotoideen aktualisieren</value>
+  </data>
+</root>

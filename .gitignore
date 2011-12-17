@@ -1,0 +1,6 @@
+*.suo
+*.user
+Bin/*
+obj/*
+.svn/
+_ReSharper.*/
