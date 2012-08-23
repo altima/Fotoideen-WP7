@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using de.wp7dev.utilities.ProgressIndicator;
 using Fotoideen.Helper;
 using Fotoideen.Model;
 using Fotoideen.Resources;
@@ -240,32 +231,33 @@ namespace Fotoideen
 
 
         private bool _isVisible = false;
-        private ProgressIndicator _indicator;
-        private void ShowPogressIndicator(ProgressTypes type = ProgressTypes.WaitCursor, bool showLabel = true)
+        //private ProgressIndicator _indicator;
+        private void ShowPogressIndicator()
+        //private void ShowPogressIndicator(ProgressTypes type = ProgressTypes.WaitCursor, bool showLabel = true)
         {
-            if (!Deployment.Current.Dispatcher.CheckAccess())
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() => ShowPogressIndicator(type, showLabel));
-                return;
-            }
-            if (_isVisible) return;
-            if (_indicator == null) _indicator = new ProgressIndicator();
-            _indicator.ProgressType = type;
-            _indicator.ShowLabel = showLabel;
-            _indicator.Show();
-            _isVisible = true;
+            //if (!Deployment.Current.Dispatcher.CheckAccess())
+            //{
+            //    Deployment.Current.Dispatcher.BeginInvoke(() => ShowPogressIndicator(type, showLabel));
+            //    return;
+            //}
+            //if (_isVisible) return;
+            //if (_indicator == null) _indicator = new ProgressIndicator();
+            //_indicator.ProgressType = type;
+            //_indicator.ShowLabel = showLabel;
+            //_indicator.Show();
+            //_isVisible = true;
         }
         private void HidePogressIndicator()
         {
-            if (!Deployment.Current.Dispatcher.CheckAccess())
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(HidePogressIndicator);
-                return;
-            }
-            if (!_isVisible) return;
-            if (_indicator == null) return;
-            _indicator.Hide();
-            _isVisible = false;
+            //if (!Deployment.Current.Dispatcher.CheckAccess())
+            //{
+            //    Deployment.Current.Dispatcher.BeginInvoke(HidePogressIndicator);
+            //    return;
+            //}
+            //if (!_isVisible) return;
+            //if (_indicator == null) return;
+            //_indicator.Hide();
+            //_isVisible = false;
         }
 
         private void btnReset_Click(object sender, RoutedEventArgs e)

@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using de.wp7dev.utilities.AppSettings;
+using Fotoideen.Helper;
 using Fotoideen.Model;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
