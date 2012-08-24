@@ -88,6 +88,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="ZLib\Crc32.cs" />
+    <Compile Include="ZLib\FlushType.cs" />
+    <Compile Include="ZLib\GZipStream.cs" />
+    <Compile Include="ZLib\Inflate.cs" />
+    <Compile Include="ZLib\InfTree.cs" />
+    <Compile Include="ZLib\ZLib.cs" />
+    <Compile Include="ZLib\ZLibCodec.cs" />
+    <Compile Include="ZLib\ZLibConstants.cs" />
+    <Compile Include="ZLib\ZLibStream.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -101,7 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
