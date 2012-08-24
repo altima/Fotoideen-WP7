@@ -2,7 +2,7 @@
 
 What do I need to build?
 
-You may need an utility project that you can get from altima. Also you may need the EAZFuscator version 3.2 (Release version from Sept. 2011), because the current BEta version has an issue in reflecting the xaml code.
+You may need the EAZFuscator version 3.2 (Release version from Sept. 2011) for building release version (can be removed in post build), because the current Beta version has an issue in reflecting the xaml code.
 
 I found a bug, what should I do?
 
